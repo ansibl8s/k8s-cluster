@@ -79,6 +79,14 @@ The `allowed_annotations` configures `crio.conf` accordingly.
 The `crio_remap_enable` configures the `/etc/subuid` and `/etc/subgid` files to add an entry for the **containers** user.
 By default, 16M uids and gids are reserved for user namespaces (256 pods * 65536 uids/gids) at the end of the uid/gid space.
 
+The `crio_extra_capabilities` allows adding extra Linux capabilities to containers beyond the default set. 
+Example to add MKNOD for a rancher deployement.
+
+```yaml
+crio_extra_capabilities:
+  - MKNOD
+```
+
 ## Optional : NRI
 
 [Node Resource Interface](https://github.com/containerd/nri) (NRI) is disabled by default for the CRI-O. If you

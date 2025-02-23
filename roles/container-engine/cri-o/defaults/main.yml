@@ -99,3 +99,6 @@ crio_man_files:
 
 # If set to true, it will enable the CRIU support in cri-o
 crio_criu_support_enabled: false
+
+# Add extra default_capabilities to crio.conf
+crio_extra_capabilities: []

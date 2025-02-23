@@ -155,6 +155,9 @@ cgroup_manager = "{{ crio_cgroup_manager }}"
 # only the capabilities defined in the containers json file by the user/kube
 # will be added.
 default_capabilities = [
+{%- for item in crio_extra_capabilities %}
+        "{{ item }}",
+{%- endfor %}
 	"CHOWN",
 	"DAC_OVERRIDE",
 	"FSETID",
