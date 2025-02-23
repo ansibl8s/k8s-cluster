@@ -24,13 +24,6 @@ container_manager: crio
 
 ## all/crio.yml
 
-Add default_capabilities
-
-```
-crio_extra_capabilities:
-  - MKNOD
-```
-
 Enable docker hub registry mirrors
 
 ```yaml
@@ -86,9 +79,10 @@ The `allowed_annotations` configures `crio.conf` accordingly.
 The `crio_remap_enable` configures the `/etc/subuid` and `/etc/subgid` files to add an entry for the **containers** user.
 By default, 16M uids and gids are reserved for user namespaces (256 pods * 65536 uids/gids) at the end of the uid/gid space.
 
-The `crio_extra_capabilities` allows adding extra Linux capabilities to containers beyond the default set. Exemple to add MKNOD for a rancher deployement.
+The `crio_extra_capabilities` allows adding extra Linux capabilities to containers beyond the default set. 
+Example to add MKNOD for a rancher deployement.
 
-```
+```yaml
 crio_extra_capabilities:
   - MKNOD
 ```
