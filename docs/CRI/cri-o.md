@@ -93,7 +93,6 @@ crio_extra_capabilities:
   - MKNOD
 ```
 
-
 ## Optional : NRI
 
 [Node Resource Interface](https://github.com/containerd/nri) (NRI) is disabled by default for the CRI-O. If you
